@@ -1,7 +1,8 @@
 my_text = input("write a text :  ")
 
-char_sum = 0
-for char in my_text:
-    char_sum += 1
+helf_len = len(my_text)//2
 
-print(char_sum)
+if my_text[helf_len] == my_text[helf_len:-1]:
+    print(True)
+else:
+    print(False)
