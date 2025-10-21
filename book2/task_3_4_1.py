@@ -1,10 +1,10 @@
-my_tuple = (11,22,33,44,55,66)
+# The original tuple from which we will extract elements.
+source_tuple = (11, 22, 33, 44, 55, 66)
 
-new_tuple = tuple()
-
-new_tuple = my_tuple[1], my_tuple[2]
-# new_tuple += (my_tuple[3],)
+# Using Slicing
+sliced_tuple = source_tuple[1:-1]
 
 
-print(new_tuple)
-
+# Output
+print(f"Original tuple: {source_tuple}")
+print(f"Extracted slice: {sliced_tuple}")

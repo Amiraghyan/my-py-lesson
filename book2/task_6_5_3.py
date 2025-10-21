@@ -1,19 +1,26 @@
-dict1 = {
-    "a": 1,
-    "b": 2,
-    "c": 3
-            }
-dict2 = {
-    "d": 4,
-    "e": 5,
-            }
+# The original dictionaries.
+first_dictionary = {"a": 1, "b": 2, "c": 3}
+second_dictionary = {"d": 4, "e": 5, "a": 99}
 
-new_dict = {}
 
-for key,val in dict1.items():
-    new_dict[key] = val
+def merge_dictionaries(dict1: dict, dict2: dict) -> dict:
+    # Start by creating a copy of the first dictionary.
+    merged_dict = dict1.copy()
 
-for key,val in dict2.items():
-    new_dict[key] = val
+    # loop through the second dictionary and add each key-value pair
+    # to our new dictionary.
+    # If a key already exists, its value will be updated.
+    for key, value in dict2.items():
+        merged_dict[key] = value
 
-print(new_dict)
+    # Return merged dictionary.
+    return merged_dict
+
+
+# Call the function with our two dictionaries.
+final_dictionary = merge_dictionaries(first_dictionary, second_dictionary)
+
+# Output
+print("First dictionary:", first_dictionary)
+print("Second dictionary:", second_dictionary)
+print("Merged dictionary:", final_dictionary)

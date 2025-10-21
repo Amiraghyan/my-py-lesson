@@ -1,8 +1,17 @@
-list1 = input("Write a numbers with a space:  ").split()
+# Ask the user to write some items.
+user_input = input("Write some items with a space: ")
+# Make a list from the user's text.
+my_list = user_input.split()
 
-new_list = []
+# Make a new empty list to hold the unique items.
+unique_list = []
 
-for el in list1:
-    if el not in new_list:
-        new_list.append(el)
-        print(el, end = " ")
+# Look at every item in the original list.
+for item in my_list:
+    # Check if the item is already in our new list.
+    if item not in unique_list:
+        # If it is not, add it to the new list.
+        unique_list.append(item)
+
+# Print the final list that has only the unique items.
+print("The unique items are:", unique_list)

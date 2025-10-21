@@ -1,13 +1,21 @@
-my_list = [(6,24,36),(120,12,6),(12,18,21)]
-K = 6
+# The list of tuples to be filtered.
+list_of_tuples = [(6, 24, 36), (120, 12, 6), (12, 18, 21)]
+# The number to check for divisibility.
+DIVISOR = 6
 
+# Make a new empty list for the results.
 filtered_list = []
 
-for list_elem in my_list:
-    for tuple_elem in list_elem:
-        if tuple_elem%6 != 0:
+# Look at each tuple in the big list.
+for current_tuple in list_of_tuples:
+    # Look at each number inside the current tuple.
+    for number in current_tuple:
+        # Check if the number cannot be divided by K.
+        if number % DIVISOR != 0:
             break
     else:
-        filtered_list.append(list_elem)
+        # Add it to our result list.
+        filtered_list.append(current_tuple)
 
-print(filtered_list)
+# Print the final list.
+print("The good tuples are:", filtered_list)

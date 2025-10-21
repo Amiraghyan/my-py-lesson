@@ -1,19 +1,33 @@
-my_text = input("Write a text:  ")
+# User Input
+my_text = input("Write a text: ")
+reg_word = input("Write a pattern: ")
 
-reg_word = input("write a regex: ")
 
+# We split the text into words to check each one individually.
+words = my_text.split()
 
-my_text += " "
+# This string will store the matching words.
 new_text = ""
-temp_word = ""
 
-for char in my_text:
+# Remove the '*' from the pattern to get the part we need to check.
+# For example, if reg_word is "*book", clean_word becomes "book".
+clean_word = reg_word.replace("*", "")
 
-    if char != " ":
-        temp_word += char
-    elif char == " ":
-        if reg_word.lower() in temp_word.lower():
-            new_text += temp_word + " "
-        temp_word = ""
+# Loop through each word in the user's text.
+for word in words:
+    # Check where the '*' is in the original pattern and apply the correct logic.
+    if reg_word.startswith("*"):
+        # If pattern is like "*book", check if the word ends with "book".
+        if word.lower().endswith(clean_word.lower()):
+            new_text += word + " "
+    elif reg_word.endswith("*"):
+        # If pattern is like "book*", check if the word starts with "book".
+        if word.lower().startswith(clean_word.lower()):
+            new_text += word + " "
+    else:
+        # If there is no '*', check for an exact match.
+        if word.lower() == clean_word.lower():
+            new_text += word + " "
 
-print(new_text)
+# Output
+print(new_text.strip())

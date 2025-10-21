@@ -1,16 +1,23 @@
-# ՕԳՆԵԼ ԵՆ
+# Ask the user to write some items.
+user_input = input("Write some items with a space: ")
+# Make a list from the user's text.
+my_list = user_input.split()
 
-list1 = input("Write a numbers with a space:  ").split()
-# list1 = ['ա', 'բ', 'գ', 'դ', 'ե', 'զ']
+# Make a new empty list to hold the results.
+combinations_list = []
 
-new_list = []
+# First loop for the first item's position.
+for i in range(len(my_list)):
+    # Second loop for the second item's position.
+    # Start from i + 1 to not use the same item again.
+    for j in range(i + 1, len(my_list)):
+        # Third loop for the third item's position.
+        # Start from j + 1 to not use the same item again.
+        for k in range(j + 1, len(my_list)):
+            # Make a small list with the three items from these positions.
+            combination = [my_list[i], my_list[j], my_list[k]]
+            # Add this small list to our big list of results.
+            combinations_list.append(combination)
 
-for i in range(len(list1)):
-    for j in range(i + 1, len(list1)):
-        for k in range(j + 1, len(list1)):
-            list2 = [list1[i], list1[j], list1[k]]
-            new_list.append(list2)
-    
-print(new_list)
-
-
+# Print the final list of all combinations.
+print("All combinations of 3 are:", combinations_list)

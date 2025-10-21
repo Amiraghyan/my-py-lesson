@@ -1,22 +1,25 @@
-# ստանալ շաբաթվա թիվը արտածել օրը
+# Ask the user to write a number for a day.
+user_input = input("Write a number for a day (1-7): ")
 
-num = int(input("Գրիր շաբաթվա օրը թվով։ "))
+# Change the text to a whole number.
+day_number = int(user_input)
 
-match num:
+# Check the number the user wrote.
+match day_number:
     case 1:
-        print("Երկուշաբթի")
+        print("Monday")
     case 2:
-        print("Երեքշաբթի")
+        print("Tuesday")
     case 3:
-        print("Չորեքշաբթի")
+        print("Wednesday")
     case 4:
-        print("Հինգշաբթի")
+        print("Thursday")
     case 5:
-        print("Ուրբաթ")
+        print("Friday")
     case 6:
-        print("Շաբաթ")
+        print("Saturday")
     case 7:
-        print("Կիրակի")
+        print("Sunday")
     case _:
-        print("Նման օր գոյություն չունի")
-    
+        # Print an error message.
+        print("Not a valid day.")

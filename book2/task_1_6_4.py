@@ -1,5 +1,9 @@
-my_text = input("Write a text :  ")
+# Get the text from the user.
+source_text = input("Write a text: ")
 
-new_text = my_text.replace(" ", "")
+# replace argument (" ") to  ("").
+text_without_spaces = source_text.replace(" ", "")
 
-print(new_text)
+
+print(f"\nOriginal text: '{source_text}'")
+print(f"Text without spaces: '{text_without_spaces}'")

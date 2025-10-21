@@ -1,8 +1,10 @@
-my_text = input("write a text :  ")
+# Get the text from the user.
+source_text = input("Write a text: ")
 
-helf_len = len(my_text)//2
+# Length Calculation
+text_length = len(source_text)
 
-if my_text[helf_len] == my_text[helf_len:-1]:
-    print(True)
-else:
-    print(False)
+
+# Output
+print(f"\nThe text you entered is: '{source_text}'")
+print(f"The length of the text is: {text_length} characters.")

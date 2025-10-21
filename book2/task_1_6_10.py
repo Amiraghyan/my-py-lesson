@@ -1,3 +1,10 @@
-my_text = input("Write a text :  ")
+# Get the original text from the user.
+source_text = input("Write a text: ")
 
-print(my_text.upper())
+# String Conversion
+uppercase_text = source_text.upper()
+
+
+# Output
+print(f"\nOriginal text: '{source_text}'")
+print(f"Uppercase text: '{uppercase_text}'")

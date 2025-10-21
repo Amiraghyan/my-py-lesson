@@ -1,9 +1,16 @@
-list1 = input("Write a numbers with a space:  ").split()
+# Ask the user to write some items.
+user_input = input("Write some items with a space: ")
+# Make a list from the user's text.
+original_list = user_input.split()
 
-list2 = []
+# Make a new, empty list.
+copied_list = []
 
-for el in list1:
-    list2.append(el)
+# Look at every item in the original list.
+for item in original_list:
+    # Add the item to the new list.
+    copied_list.append(item)
 
-print(list1 == list2)
-print(list1 is list2)
+# Check the lists
+print("Do the lists have the same items (==)?", original_list == copied_list)
+print("Are the lists the same object (is)?", original_list is copied_list)

@@ -1,12 +1,21 @@
-num = int(input("Գրիր ամբողջ թիվ։ "))
+# Ask the user to write a number.
+user_input = input("Write a number: ")
 
-i = 0
-sum_num = 0
+# Change the text to a whole number.
+limit_number = int(user_input)
 
-while i <= num:
+# Make a sum variable and counter, start with 0.
+total_sum = 0
+counter = 0
 
-    if i%2 != 0:
-        sum_num += i
-    i += 1
+# Keep looping as long as the counter is not bigger than the limit.
+while counter <= limit_number:
+    # Check if the counter number is odd.
+    if counter % 2 != 0:
+        # If it is odd, add it to the sum.
+        total_sum += counter
+    # Add 1 to the counter for the next loop.
+    counter += 1
 
-print(f"0-ից {num} կենտ թվերիգումարը կլինի {sum_num}")
+# Print the final sum.
+print("The sum of odd numbers is:", total_sum)

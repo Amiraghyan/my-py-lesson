@@ -1,12 +1,20 @@
-# Գրել եռանիշ թիվ և ստուգել արդյոք Պոլինդրում է ։
-# Արտածել True եթե այո , False եթե ոչ
+# Ask the user to write a number.
+user_input = input("Write a number: ")
 
-number = int(input("Գրիր եռանիշ ամբողջ թիվ։ "))
+# Change the text to a whole number.
+number = int(user_input)
 
-first = number//100
-last = number%10
+# Get the first digit of the number.
+first_digit = number // 100
 
-if first == last:
+# Get the last digit of the number.
+last_digit = number % 10
+
+# Check if the first and last digits are the same.
+if first_digit == last_digit:
+    # If they are the same, print True.
     print(True)
+# If they are not the same.
 else:
+    # Print False.
     print(False)
